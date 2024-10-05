@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gk@w-z_@+h+xp+@69ljfdq6qux$(gveo!amquu5v(9z31&7y^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -57,26 +57,13 @@ REST_FRAMEWORK = {
     ],
 }
 
-# Allow cross-origin requests (React is usually served on a different port)
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # React development server
-    'http://127.0.0.1:5173',
-]
-
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173',
-                        'http://127.0.0.1:5173',
-                        ]
-CSRF_COOKIE_SECURE = False
-CSRF_COOKIE_HTTPONLY = False
-CSRF_USE_SESSIONS = True
-
 
 ROOT_URLCONF = 'remote_jobs.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'remote_jobs_db',
         'USER': 'root',
-        'PASSWORD': '**********',
+        'PASSWORD': 'New@bless123',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -126,7 +113,47 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+# Site ID for django-allauth
+SITE_ID = 1
+
+# Authentication Backends
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Email configuration (for email verification)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # or SMTP configuration for real email
+
+# Redirects
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Login via email
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+ACCOUNT_UNIQUE_EMAIL = True
+
+
+# Allow cross-origin requests (React is usually served on a different port)
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # React development server
+    'http://127.0.0.1:5173',
+]
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5173',
+                        'http://127.0.0.1:5173',
+                        ]
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+CSRF_USE_SESSIONS = True
+
+# CSRF
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = ['*']
 
 
 # Internationalization
