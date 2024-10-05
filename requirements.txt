@@ -1,0 +1,29 @@
+# Django related dependencies
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==3.13.0
+django-allauth==0.54.0
+
+# MySQL support
+mysqlclient==2.1.1
+
+# Authentication
+django-rest-auth==0.9.5
+djangorestframework-simplejwt==5.2.2
+
+# Machine Learning (optional based on your use case)
+scikit-learn==1.3.0
+tensorflow==2.13.0
+
+# API interaction and other utilities
+requests==2.31.0
+django-environ==0.10.0
+
+# For handling images (if needed)
+Pillow==10.0.0
+
+# Static file management
+whitenoise==6.5.0
+
+# For deployment (if using gunicorn for production)
+gunicorn==21.2.0
