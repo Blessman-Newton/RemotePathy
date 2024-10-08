@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/home';
 import JobList from './components/JobList';
 import JobDetail from './components/JobDetail';
 import Profile from './components/Profile';
@@ -10,6 +11,7 @@ import PasswordResetDone from './components/Password_reset_done';
 import PasswordResetFromKey from './components/Password_reset_from_key';
 import PasswordChange from './components/Password_change';
 import EmailConfirm from './components/Email_confirm';
+import Recommendations from './components/main_rec';
 
 
 function App() {
@@ -17,8 +19,9 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<JobList />} />
-          <Route path="/job/:id" element={<JobDetail />} />
+        <Route path="/" element={<Home />} />
+          <Route path="/joblisting" element={<JobList />} />
+          <Route path="/jobdetails/" element={<JobDetail />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/upload-resume" element={<ResumeUpload />} />
           <Route path="/login" element={<LogIn />} />
@@ -28,6 +31,7 @@ function App() {
           <Route path="/password-reset-from-key" element={<PasswordResetFromKey />} />
           <Route path="/password-change" element={<PasswordChange />} />
           <Route path="/email-confirm" element={<EmailConfirm />} />
+          <Route path="/recommendations" element={<Recommendations />} />
         </Routes>
       </div>
     </Router>
