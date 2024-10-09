@@ -33,7 +33,7 @@ RemotePathy
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Blessman-Newton/remote-path.git
+   git clone https://github.com/Blessman-Newton/remotepathy.git
    cd remote-path
    ```
 
