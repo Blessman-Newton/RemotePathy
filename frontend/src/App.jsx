@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home';
-import JobList from './components/JobList';
-import JobDetail from './components/JobDetail';
-import Profile from './components/Profile';
-import ResumeUpload from './components/ResumeUpload';
-import LogIn from './components/Login';
-import SignUp from './components/Signup';
-import PasswordReset from './components/Password_reset';
-import PasswordResetDone from './components/Password_reset_done';
-import PasswordResetFromKey from './components/Password_reset_from_key';
-import PasswordChange from './components/Password_change';
-import EmailConfirm from './components/Email_confirm';
-import Recommendations from './components/main_rec';
+import Home from './Pages/home';
+import JobList from './Pages/JobList';
+import JobDetail from './Pages/JobDetail';
+import Profile from './Pages/Profile';
+import ResumeUpload from './Pages/ResumeUpload';
+import LogIn from './Pages/Login';
+import SignUp from './Pages/Signup';
+import PasswordReset from './Pages/Password_reset';
+import PasswordResetDone from './Pages/Password_reset_done';
+import PasswordResetFromKey from './Pages/Password_reset_from_key';
+import PasswordChange from './Pages/Password_change';
+import EmailConfirm from './Pages/Email_confirm';
+import Recommendations from './Pages/main_rec';
 
 
 function App() {
